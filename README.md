@@ -43,6 +43,8 @@ module "aws_ec2_docker" {
 }
 ```
 
+**A Terraform project example** consuming this module can be seen here: [aws-tf-ec2-docker](https://github.com/andresguisado/aws-tf-ec2-docker)
+
 ## AWS Requirements
 
 - Creating AWS S3 Bucket in advanced as follows: ``` ${var.client_name}-terraform-state ```
