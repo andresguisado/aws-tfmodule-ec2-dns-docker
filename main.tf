@@ -138,7 +138,7 @@ resource "aws_instance" "demo-conjur" {
   iam_instance_profile        = aws_iam_instance_profile.demo-conjur.name
   subnet_id                   = aws_subnet.demo-conjur.id
   vpc_security_group_ids      = [aws_security_group.demo-conjur.id]
-  ssh_key_name                    = var.ssh_key_name
+  key_name                 = var.ssh_key_name
   #user_data_base64            = "${base64encode(local.demo-node-userdata)}"
 
   tags = {
