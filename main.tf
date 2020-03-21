@@ -62,33 +62,6 @@ resource "aws_security_group_rule" "demo-conjur-ingress-workstation-https" {
   to_port           = 443
   type              = "ingress"
 }
-resource "aws_security_group_rule" "demo-conjur-ingress-workstation-ldaps" {
-  cidr_blocks       = ["0.0.0.0/0"]
-  description       = "Allow workstation to communicate with the EC2 instance by ldaps"
-  from_port         = 636
-  protocol          = "tcp"
-  security_group_id = aws_security_group.demo-conjur.id
-  to_port           = 636
-  type              = "ingress"
-}
-resource "aws_security_group_rule" "demo-conjur-ingress-workstation-postgresendpoint" {
-  cidr_blocks       = ["0.0.0.0/0"]
-  description       = "Allow workstation to communicate with the EC2 instance by postgres endpoint"
-  from_port         = 5432
-  protocol          = "tcp"
-  security_group_id = aws_security_group.demo-conjur.id
-  to_port           = 5432
-  type              = "ingress"
-}
-resource "aws_security_group_rule" "demo-conjur-ingress-workstation-postgresreplication" {
-  cidr_blocks       = ["0.0.0.0/0"]
-  description       = "Allow workstation to communicate with the EC2 instance by postgres replication"
-  from_port         = 1999
-  protocol          = "tcp"
-  security_group_id = aws_security_group.demo-conjur.id
-  to_port           = 1999
-  type              = "ingress"
-}
 
 # AWS AMI
 data "aws_ami" "demo-conjur" {
